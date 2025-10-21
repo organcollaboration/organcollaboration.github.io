@@ -12,12 +12,20 @@
     --light: #fff;
   }
 
-  body {
+  * { box-sizing: border-box; }
+
+  html, body {
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;            /* stop horizontal scroll on mobile */
+  }
+
+  body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    word-wrap: break-word;
   }
 
   header {
@@ -35,6 +43,7 @@
     padding: 0.75em 2em;
     max-width: 1200px;
     margin: auto;
+    flex-wrap: wrap;               /* allow wrapping to avoid overflow */
   }
 
   nav h1 {
@@ -50,12 +59,14 @@
     gap: 1.5em;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;               /* wrap nav items on narrow screens */
   }
 
   nav a {
     text-decoration: none;
     color: var(--text);
     font-weight: 500;
+    display: inline-block;
   }
 
   nav a:hover {
@@ -67,6 +78,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2em;
+    padding: 0 1em;
   }
 
   .logo-container img {
@@ -136,7 +148,7 @@
   }
 
   ul.media li {
-    margin-bottom: 1.2em; /* adds vertical space between items */
+    margin-bottom: 1.2em;          /* give media links breathing room */
   }
 
   ul.media p {
@@ -153,7 +165,28 @@
     text-decoration: underline;
   }
 
+  /* Mobile tweaks */
   @media (max-width: 700px) {
+    nav {
+      padding: 0.75em 1em;          /* reduce side padding */
+      gap: 0.5em 1em;               /* small breathing room when wrapping */
+    }
+
+    nav h1 {
+      width: 100%;                  /* title on its own line */
+      margin-bottom: 0.5em;
+    }
+
+    nav ul {
+      width: 100%;
+      gap: 0.75em 1em;              /* tighter gaps for small screens */
+    }
+
+    section {
+      margin: 2em 1em;              /* reduce side margin so it never overflows */
+      padding: 1.5em;
+    }
+
     .institution {
       flex-direction: column;
       align-items: center;
