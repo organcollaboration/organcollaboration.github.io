@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORGAN Collaboration</title>
+  <style>
+    :root {
+      --accent: #0044aa;
+      --bg: #f8f9fa;
+      --text: #222;
+      --light: #fff;
+    }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--light);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75em 2em;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav h1 {
+      font-size: 1.5em;
+      color: var(--accent);
+      margin: 0;
+      letter-spacing: 0.03em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .banner {
+      background: url("banner_placeholder.jpg") center/cover no-repeat;
+      height: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .banner img {
+      position: relative;
+      z-index: 1;
+      max-height: 120px;
+      width: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    section {
+      max-width: 1000px;
+      margin: 3em auto;
+      background: var(--light);
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 2em 0;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .institution {
+      margin-bottom: 1em;
+    }
+    .institution img {
+      height: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    ul.media, ul.pubs {
+      list-style: none;
+      padding: 0;
+    }
+    ul.media li, ul.pubs li {
+      margin-bottom: 0.6em;
+    }
+    a.link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a.link:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    // Smooth scrolling
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>ORGAN Collaboration</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#publications">Publications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="banner">
+    <img src="organ_logo.png" alt="ORGAN logo">
+  </div>
+
+  <section id="home">
+    <h2>Home</h2>
+    <p>
+      The <strong>Oscillating Resonant Group AxioN (ORGAN)</strong> Collaboration is an Australian-led effort
+      developing resonant detectors to search for axion dark matter and related physics.
+      ORGAN builds on Australia’s legacy of precision microwave engineering and low-temperature instrumentation,
+      combining expertise from multiple institutions to push sensitivity in the micro– to milli–electron-volt range.
+    </p>
+    <p>
+      Our experiments use high-Q resonant cavities in strong magnetic fields to convert axions into detectable photons.
+      We are expanding rapidly, with nodes at Swinburne University of Technology, the University of Western Australia,
+      the University of Queensland, and other partners.
+    </p>
+  </section>
+
+  <section id="members">
+    <h2>Members</h2>
+
+    <div class="institution">
+      <img src="swinburne_logo.png" alt="Swinburne University">
+      <strong>Swinburne University of Technology</strong><br>
+      Ben McAllister (Coordinator), Raj Aryan Singh, Paige Taylor
+    </div>
+
+    <div class="institution">
+      <img src="uwa_logo.png" alt="University of Western Australia">
+      <strong>University of Western Australia</strong><br>
+      [Names]
+    </div>
+
+    <div class="institution">
+      <img src="uq_logo.png" alt="University of Queensland">
+      <strong>University of Queensland</strong><br>
+      [Names]
+    </div>
+
+    <p>Contact us: <a class="link" href="mailto:ben.mcallister@swin.edu.au">ben.mcallister@swin.edu.au</a></p>
+  </section>
+
+  <section id="media">
+    <h2>Media Highlights</h2>
+    <ul class="media">
+      <li><a class="link" href="#" target="_blank">"Listening for dark matter in the quantum era" – ABC Science, 2024</a></li>
+      <li><a class="link" href="#" target="_blank">National Quantum & Dark Matter Road Trip feature – EQUS, 2023</a></li>
+      <li><a class="link" href="#" target="_blank">Interview with Dr Ben McAllister on The Conversation, 2022</a></li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>Selected Publications</h2>
+    <ul class="pubs">
+      <li><strong>“Results from the ORGAN Pathfinder Experiment”</strong>, <em>Phys. Rev. Lett.</em> (2021)</li>
+      <li><strong>“High-Q Re-entrant Cavities for Axion Searches”</strong>, <em>Phys. Rev. D</em> (2023)</li>
+      <li><strong>“Design Strategies for Broadband Axion Haloscopes”</strong>, <em>JINST</em> (2024)</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 The ORGAN Collaboration · Hosted on <a class="link" href="https://github.com/organ-collaboration" target="_blank">GitHub Pages</a>
+  </footer>
+
+</body>
+</html>
