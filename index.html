@@ -54,28 +54,17 @@
     nav a:hover {
       color: var(--accent);
     }
-    .banner {
-      background: url("placeholder_banner.png") center/cover no-repeat;
-      height: 240px;
+    .logo-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-      overflow: hidden;
+      margin-top: 2em;
     }
-    .banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-    .banner img {
-      position: relative;
-      z-index: 1;
-      max-height: 120px;
-      width: auto;
+    .logo-container img {
+      max-width: 500px;
+      width: 80%;
+      height: auto;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     section {
       max-width: 1000px;
@@ -96,7 +85,7 @@
       color: #666;
     }
     .institution {
-      margin-bottom: 1em;
+      margin-bottom: 1.5em;
     }
     .institution img {
       height: 40px;
@@ -144,7 +133,8 @@
     </nav>
   </header>
 
-  <div class="banner">
+  <!-- Large ORGAN logo at top -->
+  <div class="logo-container">
     <img src="organ_logo.png" alt="ORGAN logo">
   </div>
 
@@ -168,22 +158,26 @@
     <div class="institution">
       <img src="uwa_logo.png" alt="University of Western Australia">
       <strong>University of Western Australia</strong><br>
-      Aaron Quiskamp
-      Graeme Flower
-      Maxim Goryachev
+      Aaron Quiskamp<br>
+      Graeme Flower<br>
+      Maxim Goryachev<br>
       Michael Tobar (Node Lead)
     </div>
 
     <div class="institution">
       <img src="swinburne_logo.png" alt="Swinburne University">
       <strong>Swinburne University of Technology</strong><br>
-      Ben McAllister (Node Lead)
-      Raj Aryan Singh
-      Paige Taylor
+      Ben McAllister (Node Lead)<br>
+      Raj Aryan Singh<br>
+      Paige Taylor<br>
       Geoff Brooks
     </div>
 
-    <p>Contact us: <a class="link" href="mailto:bmcallister@swin.edu.au">bmcallister@swin.edu.au</a></p>, <a class="link" href="mailto:michael.tobar@uwa.edu.au">michael.tobar@uwa.edu.au</a></p>
+    <p>
+      Contact us:<br>
+      <a class="link" href="mailto:bmcallister@swin.edu.au">bmcallister@swin.edu.au</a><br>
+      <a class="link" href="mailto:michael.tobar@uwa.edu.au">michael.tobar@uwa.edu.au</a>
+    </p>
   </section>
 
   <section id="media">
@@ -205,7 +199,7 @@
   </section>
 
   <footer>
-    &copy; 2025 The ORGAN Collaboration · Hosted on <a class="link" href="https://github.com/organ-collaboration" target="_blank">GitHub Pages</a>
+    &copy; 2025 The ORGAN Collaboration · Hosted on <a class="link" href="https://github.com/organcollaboration" target="_blank">GitHub Pages</a>
   </footer>
 
 </body>
