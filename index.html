@@ -5,132 +5,167 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ORGAN Collaboration</title>
   <style>
-    :root {
-      --accent: #0044aa;
-      --bg: #f8f9fa;
-      --text: #222;
-      --light: #fff;
-    }
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      background: var(--light);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75em 2em;
-      max-width: 1200px;
-      margin: auto;
-    }
-    nav h1 {
-      font-size: 1.5em;
-      color: var(--accent);
-      margin: 0;
-      letter-spacing: 0.03em;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5em;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2em;
-    }
-    .logo-container img {
-      max-width: 500px;
-      width: 80%;
-      height: auto;
-      border-radius: 8px;
-    }
-    section {
-      max-width: 1000px;
-      margin: 3em auto;
-      background: var(--light);
-      padding: 2em;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    section h2 {
-      color: var(--accent);
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 2em 0;
-      font-size: 0.9em;
-      color: #666;
-    }
+  :root {
+    --accent: #0044aa;
+    --bg: #f8f9fa;
+    --text: #222;
+    --light: #fff;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--light);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75em 2em;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  nav h1 {
+    font-size: 1.5em;
+    color: var(--accent);
+    margin: 0;
+    letter-spacing: 0.03em;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    color: var(--accent);
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+  }
+
+  .logo-container img {
+    max-width: 500px;
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  section {
+    max-width: 1000px;
+    margin: 3em auto;
+    background: var(--light);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  section h2 {
+    color: var(--accent);
+    margin-top: 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2em 0;
+    font-size: 0.9em;
+    color: #666;
+  }
+
+  .institution {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2em;
+    gap: 1.5em;
+  }
+
+  .institution-logo {
+    flex: 0 0 120px;
+    text-align: center;
+  }
+
+  .institution-logo img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+  }
+
+  .institution-info {
+    flex: 1;
+  }
+
+  .institution-info strong {
+    font-size: 1.1em;
+    color: var(--accent);
+  }
+
+  /* Publication & media list styling */
+  ul.media, ul.pubs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul.pubs li {
+    margin-bottom: 0.9em;
+  }
+
+  ul.media li {
+    margin-bottom: 1.2em; /* adds vertical space between items */
+  }
+
+  ul.media p {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  a.link {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a.link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 700px) {
     .institution {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 2em;
-      gap: 1.5em;
-    }
-    .institution-logo {
-      flex: 0 0 120px;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
-    .institution-logo img {
-      width: 100%;
-      max-width: 120px;
-      height: auto;
+
+    .institution-logo {
+      margin-bottom: 1em;
     }
-    .institution-info {
-      flex: 1;
-    }
-    .institution-info strong {
-      font-size: 1.1em;
-      color: var(--accent);
-    }
-    ul.media, ul.pubs {
-      list-style: none;
-      padding: 0;
-    }
-    ul.media li, ul.pubs li {
-      margin-bottom: 0.6em;
-    }
-    a.link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a.link:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 700px) {
-      .institution {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .institution-logo {
-        margin-bottom: 1em;
-      }
-    }
-  </style>
+  }
+</style>
+
   <script>
     // Smooth scrolling
     document.addEventListener('DOMContentLoaded', () => {
@@ -309,31 +344,39 @@
 
 <section id="media">
   <h2>Media Highlights</h2>
-
   <ul class="media">
-  <li>
-    <a class="link" href="https://theconversation.com/this-australian-experiment-is-on-the-hunt-for-an-elusive-particle-that-could-help-unlock-the-mystery-of-dark-matter-187014" target="_blank">
-      “This Australian experiment is on the hunt for an elusive particle that could help unlock the mystery of dark matter” – The Conversation (2022)
-    </a>
-  </li>
+    <li>
+      <p>
+        <a class="link" href="https://theconversation.com/this-australian-experiment-is-on-the-hunt-for-an-elusive-particle-that-could-help-unlock-the-mystery-of-dark-matter-187014" target="_blank">
+          “This Australian experiment is on the hunt for an elusive particle that could help unlock the mystery of dark matter” – The Conversation (2022)
+        </a>
+      </p>
+    </li>
 
-    <a class="link" href="https://spaceaustralia.com/news/organ-experiment-rules-out-dark-matter-candidate" target="_blank">
-      “ORGAN Experiment Rules Out Dark Matter Candidate” – SpaceAustralia (July 2022)
-    </a>
-  </li>
-    
-  <li>
-    <a class="link" href="https://www.abc.net.au/news/2022-08-21/dark-matter-particle-physics-sabre-experiment-stawell-victoria/101113010" target="_blank">
-      “The search for dark matter” – ABC News (Aug 2022), featuring the ORGAN experiment.
-    </a>
-  </li>
-    
-  <li>
-    <a class="link" href="https://www.gadgets360.com/science/news/australia-organ-experiment-dark-matter-major-search-axions-university-western-australia-3146696" target="_blank">
-      “First ‘ORGAN’ Experiment Successfully Conducted in Bid to Solve Mysteries of Dark Matter” – Gadgets360 (2022)
-    </a>
-  </li>
-</ul>
+    <li>
+      <p>
+        <a class="link" href="https://spaceaustralia.com/news/organ-experiment-rules-out-dark-matter-candidate" target="_blank">
+          “ORGAN Experiment Rules Out Dark Matter Candidate” – SpaceAustralia (July 2022)
+        </a>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <a class="link" href="https://www.abc.net.au/news/2022-08-21/dark-matter-particle-physics-sabre-experiment-stawell-victoria/101113010" target="_blank">
+          “The search for dark matter” – ABC News (Aug 2022), featuring the ORGAN experiment
+        </a>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <a class="link" href="https://www.gadgets360.com/science/news/australia-organ-experiment-dark-matter-major-search-axions-university-western-australia-3146696" target="_blank">
+          “First ‘ORGAN’ Experiment Successfully Conducted in Bid to Solve Mysteries of Dark Matter” – Gadgets360 (2022)
+        </a>
+      </p>
+    </li>
+  </ul>
 </section>
 
 <section id="contact">
