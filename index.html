@@ -85,12 +85,26 @@
       color: #666;
     }
     .institution {
-      margin-bottom: 1.5em;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2em;
+      gap: 1.5em;
     }
-    .institution img {
-      height: 40px;
-      margin-right: 10px;
-      vertical-align: middle;
+    .institution-logo {
+      flex: 0 0 120px;
+      text-align: center;
+    }
+    .institution-logo img {
+      width: 100%;
+      max-width: 120px;
+      height: auto;
+    }
+    .institution-info {
+      flex: 1;
+    }
+    .institution-info strong {
+      font-size: 1.1em;
+      color: var(--accent);
     }
     ul.media, ul.pubs {
       list-style: none;
@@ -105,6 +119,16 @@
     }
     a.link:hover {
       text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      .institution {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .institution-logo {
+        margin-bottom: 1em;
+      }
     }
   </style>
   <script>
@@ -156,28 +180,31 @@
     <h2>Members</h2>
 
     <div class="institution">
-      <img src="uwa_logo.png" alt="University of Western Australia">
-      <strong>University of Western Australia</strong><br>
-      Aaron Quiskamp<br>
-      Graeme Flower<br>
-      Maxim Goryachev<br>
-      Michael Tobar (Node Lead)
+      <div class="institution-logo">
+        <img src="uwa_logo.png" alt="University of Western Australia">
+      </div>
+      <div class="institution-info">
+        <strong>University of Western Australia</strong><br>
+        Aaron Quiskamp<br>
+        Graeme Flower<br>
+        Maxim Goryachev<br>
+        <a class="link" href="mailto:michael.tobar@uwa.edu.au">Michael Tobar</a> (Node Lead)
+      </div>
     </div>
 
     <div class="institution">
-      <img src="swinburne_logo.png" alt="Swinburne University">
-      <strong>Swinburne University of Technology</strong><br>
-      Ben McAllister (Node Lead)<br>
-      Raj Aryan Singh<br>
-      Paige Taylor<br>
-      Geoff Brooks
+      <div class="institution-logo">
+        <img src="swinburne_logo.png" alt="Swinburne University of Technology">
+      </div>
+      <div class="institution-info">
+        <strong>Swinburne University of Technology</strong><br>
+        <a class="link" href="mailto:bmcallister@swin.edu.au">Ben McAllister</a> (Node Lead)<br>
+        Raj Aryan Singh<br>
+        Paige Taylor<br>
+        Geoff Brooks
+      </div>
     </div>
 
-    <p>
-      Contact us:<br>
-      <a class="link" href="mailto:bmcallister@swin.edu.au">bmcallister@swin.edu.au</a><br>
-      <a class="link" href="mailto:michael.tobar@uwa.edu.au">michael.tobar@uwa.edu.au</a>
-    </p>
   </section>
 
   <section id="media">
